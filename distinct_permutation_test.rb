@@ -52,7 +52,7 @@ class DistinctPermutationTest < Minitest::Test
   end
 
   def test_makes_distinct_permutations_with_nil
-    # skip
+    skip
     array = [nil, nil, 2]
     expected = array.permutation.to_a.uniq
     assert_equal expected, array.distinct_permutation.to_a
