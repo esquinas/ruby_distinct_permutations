@@ -44,7 +44,6 @@ class Array
       #            2nd=> [2, 1, 1].
     end
   end
-
 end
 
 __END__
