@@ -18,6 +18,7 @@ class Array
       # 2nd=> copy #=> [1, 2, 1]; true ; j -= 1 ; false ; j #=> 0.
       break if copy[j] >= copy[j + 1] #=> break if 1 >= 2 #=> continue.
       # 2nd=> break if 1 >= 2 #=> continue.
+      # 3rd=> break if 2 >= 1 #=> break !!
       l = size - 1 #=> l = 3 - 1; l #=> 2.
       # 2nd=> l #=> 2
       l -= 1 while copy[j] >= copy[l] # 1 >= 2 #=> false ; l #=> 2.
