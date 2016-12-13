@@ -7,6 +7,9 @@ class Array
     # If no block, return an enumerator.
     return enum_for(:distinct_permutation) unless block_given?
 
+    # IDEA:
+    # The copy should have the object_id of every item, work with that, then,
+    # before yielding, restore each object_id back to its value. Use a hash?
     copy = sort #=> copy #=> [1, 1, 2] ; self #=> [1, 1, 2].
     yield copy.dup #=> [1, 1, 2].
     return if length < 2 #=> length #=> 3; length < 2 #=> false; continue.
@@ -42,9 +45,6 @@ class Array
     end
   end
 
-  # private
-
-  # def
 end
 
 __END__
