@@ -68,13 +68,14 @@ class DistinctPermutationTest < Minitest::Test
   end
 end
 
+# TODO
 class DistinctPermutationComplexityTest < Minitest::Benchmark
   def setup
     @arry = ['A', 'A', 0, nil, Object.new]
   end
 
   def bench_distinct_permutations
-    # skip
+    skip
     assert_performance_linear 0.999 do |n|
       n.times do
         @arry.shuffle!
