@@ -11,7 +11,7 @@ class Array
     hash = map.with_object({}) do |obj, mem|
       oid = find { |o| o == obj }.object_id # TODO: optimize `find`.
       copy << oid
-      mem.merge!({ oid => obj })
+      mem.merge!(oid => obj)
     end
 
     copy.sort!
