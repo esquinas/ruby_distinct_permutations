@@ -1,6 +1,7 @@
 #!/usr/bin/env ruby
 gem 'minitest', '>= 5.0.0'
 require 'minitest/autorun'
+require 'minitest/benchmark'
 require 'minitest/pride'
 require 'set'
 require_relative 'distinct_permutation'
@@ -57,5 +58,28 @@ class DistinctPermutationTest < Minitest::Test
     array = [nil, nil, 2]
     expected = array.permutation.to_set
     assert_equal expected, array.distinct_permutation.to_set
+  end
+
+  def test_makes_permutations_with_no_comparables
+    # skip
+    array = ['A', 0, 1.1, nil, [1], { a: 2 }, :b, Object.new]
+    expected = array.permutation.to_set
+    assert_equal expected, array.distinct_permutation.to_set
+  end
+end
+
+class DistinctPermutationComplexityTest < Minitest::Benchmark
+  def setup
+    @arry = ['A', 'A', 0, nil, Object.new]
+  end
+
+  def bench_distinct_permutations
+    # skip
+    assert_performance_linear 0.999 do |n|
+      n.times do
+        @arry.shuffle!
+        @arry.distinct_permutation.to_a
+      end
+    end
   end
 end
