@@ -6,8 +6,8 @@ Use this to get unique and distinct [permutations](https://en.wikipedia.org/wiki
 
 Normal permutations:
 ```ruby
-[0, 1, 2].permutation.to_a.size      #=> [[0, 1, 2], [0, 2, 1], [1, 0, 2], [1, 2, 0], [2, 0, 1], [2, 1, 0]]
-[0, 1, 2].permutation.to_a.size      #=> 6
+[0, 1, 2].permutation.to_a      #=> [[0, 1, 2], [0, 2, 1], [1, 0, 2], [1, 2, 0], [2, 0, 1], [2, 1, 0]]
+[0, 1, 2].permutation.to_a.size #=> 6
 ```
 
 Distinct permutations:
