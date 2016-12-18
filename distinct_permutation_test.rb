@@ -6,8 +6,6 @@ require 'minitest/pride'
 require 'set'
 require_relative 'distinct_permutation'
 
-# Test data version:
-# 6a886e0
 class DistinctPermutationTest < Minitest::Test
   def test_behaves_like_array_permutations_when_all_numbers_are_different
     # skip
@@ -92,14 +90,14 @@ class DistinctPermutationTest < Minitest::Test
   end
 end
 
-# TODO
+# TODO: finish this.
 class DistinctPermutationComplexityTest < Minitest::Benchmark
   def setup
     @arry = ['A', 'A', 0, nil, Object.new]
   end
 
   def bench_distinct_permutations
-    skip
+    skip # WARNING: slow
     assert_performance_linear 0.999 do |n|
       n.times do
         @arry.shuffle!
